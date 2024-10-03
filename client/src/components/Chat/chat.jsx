@@ -156,7 +156,7 @@ import axios from 'axios';
 import ChatInner from './chatInner';
 import './chat.css'
 
-const socket = io("http://localhost:4000/");
+const socket = io("https://projectpulsecloned.onrender.com");
 
 
 const Chat = ({ user, role }) => {
