@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://https://https://projectpulsecloned.onrender.com',
+  baseURL: 'https://projectpulsecloned.onrender.com',
   headers: {
   'Content-Type': 'application/json',
   },
