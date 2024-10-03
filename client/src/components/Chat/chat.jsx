@@ -108,7 +108,7 @@ const Chat = ({ user ,role}) => {
                 setProjectsData(ProjectsData.filter(project => project.Approval === 'yes'))
             })
         }
-        else{
+        if(role=="student"){
             axios.get(`https://projectpulsecloned.onrender.com/ShowProjectsByEmail/${user.email}`)
             .then(result => {
                 setProjectsData(result.data);
