@@ -5,7 +5,7 @@ import axios from 'axios';
 import ChatInner from './chatInner';
 import './chat.css'
 
-const socket = io("https://projectpulsecloned.onrender.com/");
+const socket = io("https://projectpulsecloned.onrender.com");
 
 // const Chat = ({ project }) => {
 //     const user = useSelector((state) => state.Auth.user)

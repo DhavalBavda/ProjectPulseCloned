@@ -4,7 +4,7 @@ import Chat from "../models/chatModel.js";
 const socketHandler = (server) => {
   const io = new Server(server, {
     cors: {
-      origin: "https://projectpulsecloned-frontend.onrender.com/",
+      origin: "https://projectpulsecloned-frontend.onrender.com",
       methods: ["GET", "POST"],
     },
   });
