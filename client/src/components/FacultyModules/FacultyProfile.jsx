@@ -15,7 +15,7 @@ const FacultyProfile = () => {
 
   useEffect(() => {
     const getDetails = () => {
-      axios.get(`http://https://projectpulsecloned-frontend.onrender.com/FacultyDetailByEmail`, {
+      axios.get(`http://https://https://projectpulsecloned.onrender.com/FacultyDetailByEmail`, {
         params: { email: user.email },
         headers: {
           'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ const FacultyProfile = () => {
     formData.append('mobilenumber', mobilenumber)
     formData.append('image', FacImage) 
 
-    axios.put(`http://https://projectpulsecloned-frontend.onrender.com/EditFaculty/${FacutlyData._id}`, formData, {
+    axios.put(`http://https://https://projectpulsecloned.onrender.com/EditFaculty/${FacutlyData._id}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -75,7 +75,7 @@ const FacultyProfile = () => {
         <div className='profile-image-container'>
           <div className="profile-image-display">
             <h3>Profile Picture</h3>
-            <img src={`http://https://projectpulsecloned-frontend.onrender.com/${FacImage}`} alt="Profile" className="profile-image" />
+            <img src={`http://https://https://projectpulsecloned.onrender.com/${FacImage}`} alt="Profile" className="profile-image" />
           </div>
           <div className="profile-picture">
             <button onClick={handleButtonClick}>Edit {<MdOutlineEdit />}</button>

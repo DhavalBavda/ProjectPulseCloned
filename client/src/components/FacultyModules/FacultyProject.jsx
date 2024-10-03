@@ -31,13 +31,13 @@ const FacultyProject = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const result = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ProjectDetailByFaculty/${user.email}`);
+        const result = await axios.get(`http://https://https://projectpulsecloned.onrender.com/ProjectDetailByFaculty/${user.email}`);
         const projects = result.data;
 
         // Fetch progress for each project
         const projectsWithProgress = await Promise.all(projects.map(async (project) => {
           try {
-            const progressResponse = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/api/ShowProgress/${project._id}`);
+            const progressResponse = await axios.get(`http://https://https://projectpulsecloned.onrender.com/api/ShowProgress/${project._id}`);
             return {
               ...project,
               Progress: progressResponse.data.progress || 0
@@ -111,9 +111,9 @@ const FacultyProject = () => {
       selectedProject.Approval = commentType;
       selectedProject.comment = comment;
     }
-    axios.put(`http://https://projectpulsecloned-frontend.onrender.com/EditProjects/${selectedProject._id}`, selectedProject)
+    axios.put(`http://https://https://projectpulsecloned.onrender.com/EditProjects/${selectedProject._id}`, selectedProject)
       .then(() => {
-        axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ProjectDetailByFaculty/${user.email}`)
+        axios.get(`http://https://https://projectpulsecloned.onrender.com/ProjectDetailByFaculty/${user.email}`)
           .then(result => {
             setProjectsData(result.data);
           });

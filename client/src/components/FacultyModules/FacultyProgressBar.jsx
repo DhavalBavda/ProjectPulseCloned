@@ -22,7 +22,7 @@ const FacultyProgressBar = ({ projectId, onUpdateProgress }) => {
   useEffect(() => {
     const fetchProgress = async () => {
       try {
-        const response = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/api/ShowProgress/${projectId}`);
+        const response = await axios.get(`http://https://https://projectpulsecloned.onrender.com/api/ShowProgress/${projectId}`);
         if (response.data) {
           const fetchedProgress = response.data.progress || 0;
           setProgress(fetchedProgress);
@@ -45,7 +45,7 @@ const FacultyProgressBar = ({ projectId, onUpdateProgress }) => {
 
   const handleUpdateProgress = async () => {
     try {
-      const response = await axios.post('http://https://projectpulsecloned-frontend.onrender.com/api/AddProgressForStudent', { projectId, progress });
+      const response = await axios.post('http://https://https://projectpulsecloned.onrender.com/api/AddProgressForStudent', { projectId, progress });
       console.log('Response:', response);
       alert('Progress updated successfully');
       onUpdateProgress(progress);  

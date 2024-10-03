@@ -16,7 +16,7 @@ const FacultyDashboard = () => {
   useEffect(() => {
     if (!user) return;
 
-    axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ProjectDetailByFaculty/${user.email}`)
+    axios.get(`http://https://https://projectpulsecloned.onrender.com/ProjectDetailByFaculty/${user.email}`)
       .then(async result => {
         const projectsData = result.data;
 
@@ -40,7 +40,7 @@ const FacultyDashboard = () => {
 
         const updatedProjects = await Promise.all(approvedProjects.map(async project => {
           try {
-            const progressResponse = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/api/ShowProgress/${project._id}`);
+            const progressResponse = await axios.get(`http://https://https://projectpulsecloned.onrender.com/api/ShowProgress/${project._id}`);
             return {
               ...project,
               progress: progressResponse.data.progress || 0

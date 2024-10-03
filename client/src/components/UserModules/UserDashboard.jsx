@@ -13,7 +13,7 @@ const UserDashboard = () => {
   useEffect(() => {
     const fetchWeeklyReportCount = async (projectId) => {
       try {
-        const response = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ShowWeeklyReports/${projectId}`);
+        const response = await axios.get(`http://https://https://projectpulsecloned.onrender.com/ShowWeeklyReports/${projectId}`);
         return response.data.length; // Return the number of reports
       } catch (error) {
         console.error('Error fetching weekly report count', error);
@@ -23,7 +23,7 @@ const UserDashboard = () => {
 
     const fetchFileCount = async (projectId) => {
       try {
-        const response = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ShowFilesToStudent/${projectId}`);
+        const response = await axios.get(`http://https://https://projectpulsecloned.onrender.com/ShowFilesToStudent/${projectId}`);
         return response.data.length; // Return the number of files
       } catch (error) {
         console.error('Error fetching file count', error);
@@ -33,7 +33,7 @@ const UserDashboard = () => {
 
     const fetchData = async () => {
       try {
-        const result = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ShowProjectsByEmail/${user.email}`);
+        const result = await axios.get(`http://https://https://projectpulsecloned.onrender.com/ShowProjectsByEmail/${user.email}`);
         const projectsData = result.data;
         setProjectsData(projectsData);
 
@@ -41,7 +41,7 @@ const UserDashboard = () => {
         const progressData = await Promise.all(projectsData.map(async (project) => {
           try {
             const [progressResponse, reportCount, fileCount] = await Promise.all([
-              axios.get(`http://https://projectpulsecloned-frontend.onrender.com/api/ShowProgress/${project._id}`),
+              axios.get(`http://https://https://projectpulsecloned.onrender.com/api/ShowProgress/${project._id}`),
               fetchWeeklyReportCount(project._id),
               fetchFileCount(project._id)
             ]);
@@ -92,7 +92,7 @@ const UserDashboard = () => {
 
     try {
       // Fetch the team data for the selected project
-      const response = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ShowTeams`);
+      const response = await axios.get(`http://https://https://projectpulsecloned.onrender.com/ShowTeams`);
       const teamData = response.data.find(team => team.TeamName === project.TeamName);
 
       if (teamData) {
