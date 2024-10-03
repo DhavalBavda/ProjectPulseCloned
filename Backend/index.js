@@ -31,6 +31,8 @@ app.use(cors({
 }));
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../client/dist"))); // Adjust the path as necessary
+
 
 app.use('/api/auth', AuthRoutes);
 app.use('/api/admin', AdminRoute);
