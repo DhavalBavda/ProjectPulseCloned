@@ -22,7 +22,7 @@ const UserProject = ({ user }) => {
   
 
   useEffect(() => {
-    axios.get(`http://https://https://projectpulsecloned.onrender.com/ShowProjectsByEmail/${user.email}`)
+    axios.get(`https://projectpulsecloned.onrender.com/ShowProjectsByEmail/${user.email}`)
       .then(result => {
         setProjectsData(result.data)
         setProjectCount(result.data.length);
@@ -35,7 +35,7 @@ const UserProject = ({ user }) => {
 
 
   const getFacultyDetails = () => {
-    axios.get('http://https://https://projectpulsecloned.onrender.com/ShowFacultysData')
+    axios.get('https://projectpulsecloned.onrender.com/ShowFacultysData')
       .then(result => {
         // console.log(result.data)
         setFacultylist(result.data)
@@ -44,7 +44,7 @@ const UserProject = ({ user }) => {
   };
 
   const getTeamsData = () => {
-    axios.get(`http://https://https://projectpulsecloned.onrender.com/ShowTeamsByEmail/${user.email}`)
+    axios.get(`https://projectpulsecloned.onrender.com/ShowTeamsByEmail/${user.email}`)
       .then(result => {
         setTeamsList(result.data);
       })
@@ -62,7 +62,7 @@ const UserProject = ({ user }) => {
       Year: currentYear
     }
 
-    axios.post('http://https://https://projectpulsecloned.onrender.com/AddProjects', newProject, {
+    axios.post('https://projectpulsecloned.onrender.com/AddProjects', newProject, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -77,7 +77,7 @@ const UserProject = ({ user }) => {
   }
 
   const handleDelete = (id) => {
-    axios.delete(`http://https://https://projectpulsecloned.onrender.com/DeleteProjects/${id}`)
+    axios.delete(`https://projectpulsecloned.onrender.com/DeleteProjects/${id}`)
       .then(result => { toast("Project Deleted Successfully") 
         setProjectsData(prevData => prevData.filter(project => project._id !== id)); 
         setProjectCount(prevCount => prevCount - 1);

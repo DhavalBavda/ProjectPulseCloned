@@ -113,7 +113,7 @@ export default function Register() {
 
       if (request.status === 200) {
         toast.success(response.message);
-        axios.post('http://https://https://projectpulsecloned.onrender.com/AddStudent', formData, {
+        axios.post('https://projectpulsecloned.onrender.com/AddStudent', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
