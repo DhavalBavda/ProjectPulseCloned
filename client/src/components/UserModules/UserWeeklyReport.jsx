@@ -28,7 +28,7 @@ const WeeklyReportForm = ({ project, fetchWeeklyReports }) => {
     }
 
     try {
-      await axios.post('http://localhost:4000/AddWeeklyReportByStudent', formData, {
+      await axios.post('http://https://projectpulsecloned-frontend.onrender.com/AddWeeklyReportByStudent', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -90,7 +90,7 @@ const UploadedReports = ({ project }) => {
 
   const fetchWeeklyReports = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/ShowWeeklyReports/${project._id}`);
+      const response = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ShowWeeklyReports/${project._id}`);
       setWeeklyReports(response.data);
       return response.data.length;
     } catch (error) {
@@ -160,7 +160,7 @@ const UploadedReports = ({ project }) => {
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <span className="close" onClick={closeModal}>&times;</span>
             <iframe 
-              src={`http://localhost:4000/${modalFile}`} 
+              src={`http://https://projectpulsecloned-frontend.onrender.com/${modalFile}`} 
               style={{ width: '100%', height: '80vh', border: 'none' }} 
               title="Uploaded File"
             ></iframe>

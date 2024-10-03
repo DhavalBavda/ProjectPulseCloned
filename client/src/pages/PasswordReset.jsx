@@ -17,7 +17,7 @@ const PasswordReset = () => {
             return;
         }
         try {
-            await axios.post(`http://localhost:4000/api/auth/reset-password/${token}`, { password });
+            await axios.post(`http://https://projectpulsecloned-frontend.onrender.com/api/auth/reset-password/${token}`, { password });
             toast.success("Password has been reset successfully");
             setTimeout(() => {
                 navigate('/login');

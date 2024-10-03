@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import './chatinner.css'
-const socket = io("http://localhost:4000/");
+const socket = io("http://https://projectpulsecloned-frontend.onrender.com/");
 
 const ChatInner = ({ project }) => {
     const user = useSelector((state) => state.Auth.user);
@@ -15,7 +15,7 @@ const ChatInner = ({ project }) => {
 
     useEffect(() => {
         // Fetch team data
-        axios.get(`http://localhost:4000/TeamDataById/${project.TeamId}`)
+        axios.get(`http://https://projectpulsecloned-frontend.onrender.com/TeamDataById/${project.TeamId}`)
             .then((result) => {
                 setTeamData(result.data);
             })
@@ -35,7 +35,7 @@ const ChatInner = ({ project }) => {
     useEffect(() => {
         // Fetch messages whenever the roomId changes
         if (roomId) {
-            axios.get(`http://localhost:4000/messages/${roomId}`)
+            axios.get(`http://https://projectpulsecloned-frontend.onrender.com/messages/${roomId}`)
                 .then((result) => {
                     setMessages(result.data);
                 })

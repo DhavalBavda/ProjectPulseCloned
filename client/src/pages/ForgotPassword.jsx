@@ -12,7 +12,7 @@ const ForgotPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:4000/api/auth/forgot-password', { email });
+            await axios.post('http://https://projectpulsecloned-frontend.onrender.com/api/auth/forgot-password', { email });
             toast.success("Password reset email sent");
             setTimeout(() => {
                 navigate('/login');

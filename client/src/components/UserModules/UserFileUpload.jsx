@@ -12,7 +12,7 @@ const UploadedFiles = ({ project }) => {
 
   const fetchFiles = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/ShowFilesToStudent/${project._id}`);
+      const response = await axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ShowFilesToStudent/${project._id}`);
       setFiles(response.data);
       setFileCount(response.data.length);
     } catch (error) {
@@ -23,13 +23,13 @@ const UploadedFiles = ({ project }) => {
 
   const handleDownload = (fileUrl) => {
     const link = document.createElement('a');
-    link.href = `http://localhost:4000/${fileUrl}`;
+    link.href = `http://https://projectpulsecloned-frontend.onrender.com/${fileUrl}`;
     link.download = true;
     link.click();
   };
 
   const handleView = (fileUrl) => {
-    setViewFileUrl(`http://localhost:4000/${fileUrl}`);
+    setViewFileUrl(`http://https://projectpulsecloned-frontend.onrender.com/${fileUrl}`);
   };
 
   const handleCloseViewer = () => {
@@ -110,7 +110,7 @@ const FileUploadForm = ({ project, fetchFiles }) => {
     formData.append('projectId', project._id);
 
     try {
-      await axios.post(`http://localhost:4000/AddProjectFilesByStudent`, formData, {
+      await axios.post(`http://https://projectpulsecloned-frontend.onrender.com/AddProjectFilesByStudent`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

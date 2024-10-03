@@ -21,7 +21,7 @@ const UserTeam = ({ user }) => {
     const closeModal = () => setIsModalOpen(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/ShowTeamsByEmail/${user.email}`)
+        axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ShowTeamsByEmail/${user.email}`)
             .then(result => {
                 setTeams(result.data);
             })
@@ -40,7 +40,7 @@ const UserTeam = ({ user }) => {
         }
         const memberList = membersDetails.split(',').map(member => member.trim());
         for (let i = 0; i < memberList.length; i++) {
-            axios.get('http://localhost:4000/CheckForEmail', {
+            axios.get('http://https://projectpulsecloned-frontend.onrender.com/CheckForEmail', {
                 params: { email: memberList[i] },
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -60,7 +60,7 @@ const UserTeam = ({ user }) => {
         formData.append('TeamName', teamName);
         formData.append('LeaderName', teamLeader);
         formData.append('TeamMembers', dataformembers);
-        axios.post('http://localhost:4000/AddTeams', formData, {
+        axios.post('http://https://projectpulsecloned-frontend.onrender.com/AddTeams', formData, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })
             .then((result) => {
@@ -72,7 +72,7 @@ const UserTeam = ({ user }) => {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:4000/DeleteTeams/${id}`)
+        axios.delete(`http://https://projectpulsecloned-frontend.onrender.com/DeleteTeams/${id}`)
             .then(result => {
                 toast(result.data.message);
                 setTeams(teams.filter(team => team._id !== id));

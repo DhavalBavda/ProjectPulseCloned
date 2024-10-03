@@ -5,7 +5,7 @@ import axios from 'axios';
 import ChatInner from './chatInner';
 import './chat.css'
 
-const socket = io("http://localhost:4000/");
+const socket = io("http://https://projectpulsecloned-frontend.onrender.com/");
 
 // const Chat = ({ project }) => {
 //     const user = useSelector((state) => state.Auth.user)
@@ -16,7 +16,7 @@ const socket = io("http://localhost:4000/");
 //     const [members, setMembers] = useState([]);
 
 //     useEffect(() => {
-//         axios.get(`http://localhost:4000/TeamDataById/${project.TeamId}`)
+//         axios.get(`http://https://projectpulsecloned-frontend.onrender.com/TeamDataById/${project.TeamId}`)
 //             .then((result) => {
 //                 setTeamData(result.data);
 //             })
@@ -102,14 +102,14 @@ const Chat = ({ user ,role}) => {
 
     useEffect(() => {
         if(role=="faculty"){
-            axios.get(`http://localhost:4000/ProjectDetailByFaculty/${user.email}`)
+            axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ProjectDetailByFaculty/${user.email}`)
             .then(result => {
                 setProjectsData(result.data);
                 setProjectsData(ProjectsData.filter(project => project.Approval === 'yes'))
             })
         }
         else{
-            axios.get(`http://localhost:4000/ShowProjectsByEmail/${user.email}`)
+            axios.get(`http://https://projectpulsecloned-frontend.onrender.com/ShowProjectsByEmail/${user.email}`)
             .then(result => {
                 setProjectsData(result.data);
 
