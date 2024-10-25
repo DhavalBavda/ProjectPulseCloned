@@ -159,7 +159,8 @@ import './chat.css'
 const socket = io("https://projectpulsecloned.onrender.com");
 
 
-const Chat = ({ user, role }) => {
+const Chat = ({role }) => {
+    const user = useSelector((state) => state.Auth.user)
     const [ProjectsData, setProjectsData] = useState([]);
     const [showChatModal, setShowChatModal] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
