@@ -67,6 +67,7 @@ export function Admin({ loggedInAdmin }) {
         const response = request.data;
         if (request.status === 200) {
           setUsers(response.users);
+          console.log("adsds");
         }
       } catch (error) {
         console.log(error);
