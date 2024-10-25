@@ -3,6 +3,7 @@ import UserModel from "../models/user.js";
 const Getuser = async (req, res) => {
   try {
     const users = await UserModel.find().populate("role");
+    console.log(users);
     res.status(200).json({ users });
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error" });
